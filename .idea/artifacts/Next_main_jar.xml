@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Next_main:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Next_main_jar</output-path>
+    <root id="archive" name="Next_main.jar">
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.smali/util/2.1.1/8ec6f06e7ff04d4180f4f274ca2ab2c86479ec60/util-2.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/b1b6ea3b7e4aa4f492509a4952029cd8e48019ad/commons-io-2.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.directory.studio/org.apache.commons.io/2.4/b98d592c582262b3da8a871c7317f4902d98e996/org.apache.commons.io-2.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-cli/commons-cli/1.2/2bf96b7aa8b611c177d329452af1dc933e14501c/commons-cli-1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.smali/baksmali/2.1.1/f2a150b9aaebbe4531b2349cd2786d88758ce3e2/baksmali-2.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.smali/dexlib2/2.1.1/40ba0f8ca59294f02a9940629cc9f3e208e9d672/dexlib2-2.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android.tools/dx/1.7/70eab4a00d9f7ca8849e960a87f5b6736aa4ec11/dx-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr-runtime/3.5.2_1/7ee7e5cdd9d6b67dca99f4b0702cd85cb43def7d/org.apache.servicemix.bundles.antlr-runtime-3.5.2_1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/apktool_2.0.0rc4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.11/4e031bb61df09069aeb2bffb4019e7a5034a4ee0/junit-4.11.jar" path-in-jar="/" />
+      <element id="module-output" name="Next_main" />
+      <element id="module-output" name="Next" />
+    </root>
+  </artifact>
+</component>
