@@ -191,7 +191,7 @@ public class Main {
 
         formatter
                 .printHelp(
-                        "apkpatch -f <new> -t <old> -o <output> -k <keystore> -p <***> -a <alias> -e <***>",
+                        "apkmerge -f <new> -t <old> -o <output> -k <keystore> -p <***> -a <alias> -e <***>",
                         patchOptions);
 
         System.out.println("");
