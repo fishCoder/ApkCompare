@@ -89,7 +89,7 @@ public class Main {
 
     private static void option() {
         OptionBuilder.withLongOpt("from");
-        OptionBuilder.withDescription("new Apk file path.");
+        OptionBuilder.withDescription("new Apk file path. *");
         OptionBuilder.hasArg(true);
         OptionBuilder.withArgName("loc");
 
@@ -99,7 +99,7 @@ public class Main {
         allOptions.addOption(fromOption);
 
         OptionBuilder.withLongOpt("to");
-        OptionBuilder.withDescription("old Apk file path.");
+        OptionBuilder.withDescription("old Apk file path. *");
         OptionBuilder.hasArg(true);
         OptionBuilder.withArgName("loc");
 
@@ -109,7 +109,7 @@ public class Main {
         allOptions.addOption(toOption);
 
         OptionBuilder.withLongOpt("keystore");
-        OptionBuilder.withDescription("keystore path.");
+        OptionBuilder.withDescription("keystore path. *");
         OptionBuilder.hasArg(true);
         OptionBuilder.withArgName("loc");
 
@@ -120,7 +120,7 @@ public class Main {
         allOptions.addOption(keystoreOption);
 
         OptionBuilder.withLongOpt("kpassword");
-        OptionBuilder.withDescription("keystore password.");
+        OptionBuilder.withDescription("keystore password. *");
         OptionBuilder.hasArg(true);
         OptionBuilder.withArgName("***");
 
@@ -131,7 +131,7 @@ public class Main {
         allOptions.addOption(kPasswordOption);
 
         OptionBuilder.withLongOpt("alias");
-        OptionBuilder.withDescription("alias.");
+        OptionBuilder.withDescription("alias. *");
         OptionBuilder.hasArg(true);
         OptionBuilder.withArgName("alias");
 
@@ -142,7 +142,7 @@ public class Main {
         allOptions.addOption(aliasOption);
 
         OptionBuilder.withLongOpt("epassword");
-        OptionBuilder.withDescription("entry password.");
+        OptionBuilder.withDescription("entry password. *");
         OptionBuilder.hasArg(true);
         OptionBuilder.withArgName("***");
 
@@ -153,7 +153,7 @@ public class Main {
         allOptions.addOption(ePasswordOption);
 
         OptionBuilder.withLongOpt("out");
-        OptionBuilder.withDescription("output dir.");
+        OptionBuilder.withDescription("output dir. *");
         OptionBuilder.hasArg(true);
         OptionBuilder.withArgName("dir");
 
@@ -191,7 +191,7 @@ public class Main {
 
         formatter
                 .printHelp(
-                        "apkmerge -f <new> -t <old> -o <output> -k <keystore> -p <***> -a <alias> -e <***>",
+                        "apkmerge -f <new> -t <old> -o <outputdir> -k <keystore> -p <***> -a <alias> -e <***>",
                         patchOptions);
 
         System.out.println("");
