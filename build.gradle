@@ -1,4 +1,4 @@
-version '1.0-SNAPSHOT'
+version '1.0'
 
 apply plugin: 'java'
 
@@ -11,7 +11,7 @@ task fatJar(type: Jar) {
                 'Implementation-Version': version,
                 'Main-Class': 'com.seele.Main'
     }
-    baseName = project.name + '-all'
+    baseName = 'ApkCompare-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
