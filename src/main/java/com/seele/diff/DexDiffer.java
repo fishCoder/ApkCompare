@@ -1,8 +1,12 @@
 package com.seele.diff;
 
 import java.io.*;
+import java.util.Enumeration;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 import com.google.common.collect.Iterables;
 import org.jf.baksmali.Adaptors.ClassDefinition;
@@ -12,22 +16,23 @@ import org.jf.dexlib2.dexbacked.DexBackedClassDef;
 import org.jf.dexlib2.dexbacked.DexBackedDexFile;
 import org.jf.dexlib2.dexbacked.DexBackedField;
 import org.jf.dexlib2.dexbacked.DexBackedMethod;
+import org.jf.dexlib2.dexbacked.util.FixedSizeSet;
 import org.jf.dexlib2.util.SyntheticAccessorResolver;
 import org.jf.util.IndentingWriter;
 
 public class DexDiffer {
     public DiffInfo diff(File newFile, File oldFile)
             throws IOException {
-        DexBackedDexFile newDexFile = DexFileFactory.loadDexFile(newFile, 19,
-                true);
-        DexBackedDexFile oldDexFile = DexFileFactory.loadDexFile(oldFile, 19,
-                true);
+//        DexBackedDexFile newDexFile = DexFileFactory.loadDexFile(newFile, 19,true);
+//        DexBackedDexFile oldDexFile = DexFileFactory.loadDexFile(oldFile, 19,true);
+
+        HashSet<DexBackedClassDef> newClasses = getClassSet(newFile);
+        HashSet<DexBackedClassDef> oldclasses = getClassSet(oldFile);
 
         DiffInfo info = DiffInfo.getInstance();
 
 
-        for (DexBackedClassDef newClazz : newDexFile.getClasses()) {
-            Set<DexBackedClassDef> oldclasses = (Set<DexBackedClassDef>) oldDexFile.getClasses();
+        for (DexBackedClassDef newClazz : newClasses) {
             boolean contains = false;
             for (DexBackedClassDef oldClazz : oldclasses) {
                 if (newClazz.equals(oldClazz)) {
@@ -50,6 +55,30 @@ public class DexDiffer {
         }
         return info;
     }
+
+    private HashSet<DexBackedClassDef> getClassSet(File apkFile) throws IOException{
+        ZipFile localZipFile = new ZipFile(apkFile);
+        Enumeration localEnumeration = localZipFile.entries();
+        HashSet<DexBackedClassDef> newset = new HashSet<DexBackedClassDef>();
+        while (localEnumeration.hasMoreElements()) {
+            ZipEntry localZipEntry = (ZipEntry) localEnumeration.nextElement();
+            if (localZipEntry.getName().endsWith(".dex")) {
+                DexBackedDexFile newDexFile = DexFileFactory.loadDexFile(apkFile, localZipEntry.getName(), 19, true);
+                FixedSizeSet<DexBackedClassDef> newclasses = (FixedSizeSet) newDexFile.getClasses();
+                mergeHashSet(newset, newclasses);
+            }
+        }
+        return newset;
+    }
+
+    private void mergeHashSet(HashSet<DexBackedClassDef> set, FixedSizeSet<DexBackedClassDef> fset) {
+        Iterator<DexBackedClassDef> tmpIter = fset.iterator();
+        while (tmpIter.hasNext()) {
+            DexBackedClassDef item = tmpIter.next();
+            set.add(item);
+        }
+    }
+
 
     public String genClassString(DexBackedClassDef dexDef){
         baksmaliOptions options = new baksmaliOptions();
